@@ -1,17 +1,11 @@
 import React, { useContext, useState } from "react";
 import Wish from "./Wish";
+import { WishContext } from "../context/WishContext";
 
 export default function WishList() {
-  const [wishes, setWishes] = useState([
-    {
-      id: 1,
-      title: "Wish 1",
-    },
-    {
-      id: 2,
-      title: "Wish 2",
-    },
-  ]);
+//consume the wish context value
+const [wishes, setWishes] =  useContext(WishContext);
+
   return (
     <>
       {wishes.map((wish) => {

@@ -1,9 +1,15 @@
 import React, { useContext } from "react";
+import { WishContext } from "../context/WishContext";
 
 export default function Wish({ title, id }) {
+  //consume the wish context value
+  const [wishes, setWishes] =  useContext(WishContext);
 
     const removeWish = () => {
-        console.log("removing wish...")
+      let newWishes = wishes.filter((wish) => {
+        return wish.id !== id;
+      })
+      setWishes(newWishes);
     }
     
   return (

@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react'
-
+import { WishContext } from '../context/WishContext';
 export default function AddWish() {
+//consume the wish context value
+const [wishes, setWishes] =  useContext(WishContext);
 
     const [title, setTitle] = useState('');
 
@@ -10,8 +12,15 @@ export default function AddWish() {
 
     const addWish = e => {
         e.preventDefault();
-        console.log("adding wish to bucket...")
-        setTitle('')
+        let newWish = {
+            title: title,
+            id: wishes.length * Math.random() + 1
+        }
+
+        setWishes(prevState => [...prevState, newWish]);
+
+        console.log("adding wish to bucket...", newWish);
+        setTitle('') //to remove the added wish from the search bar
     }
   return (
     <div className='add-wish'>
