@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400;700&display=swap');
+
 .App {
   text-align: center;
 }
@@ -35,4 +37,68 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+nav {
+  background-color: #2a70fb;
+  color: white;
+  font-size: 2rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav > div:nth-child(2){
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.add-wish form{
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type="text"] {
+  display: inline-block;
+  width: 90vw;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border: none;
+  background-color: #cbdcff;
+  box-shadow: 0 9px 14px 0 rgba(0, 0, 0, 0.3);
+}
+
+input[type="submit"] {
+  display: inline-block;
+  width: auto;
+  padding: 1rem;
+  background-color: #2a70fb;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 9px 14px 0 rgba(0, 0, 0, 0.3);
+}
+
+.wish {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wish button {
+  border: none;
+  height: fit-content;
+  position: relative;
+  top: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all .3s ease-out;
+}
+
+.wish button:hover {
+  transform: scale(1.2);
 }
